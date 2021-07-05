@@ -1,0 +1,10 @@
+# Article_Classification
+
+To create a dataset that could be used as input to a machine learning algorithm, I implemented the bag of words approach using the CountVectorizer in sklearn. To reduce the number of words in the dictionary and keep the same words in the dictionary I had combined both of the training and testing data but as per the requirements of the project, I did not use the testing data during the training phase of the machine learning algorithm. To reduce the number of words in the dictionary I removed stop words and those words that appeared only in a handful of documents. To do this I have used min_df and max_df.
+After using the bag of words approach for each document, I have divided it back into the training and testing data as before. I have converted them into Numpy arrays as it was the input format for the machine learning algorithms, and they are easier to access.
+It occurred to me that it would be a problem that was similar to the spam or not spam problem. Based on my initial findings I tried to solve it using multi-classification using logistic regression. I had also though of implementing an LSTM approach. But during my research for implementation of LSTM I came across a research that stated that Support Vector Machines also provide a very competitive approach to Neural Networks and may be faster in some approaches.
+Due to these findings I had tried multiple approaches; and I finally came to the conclusion of using the Support Vector Machines. Based on SVM I got the maximum accuracy of 76.85 %. After printing the confusion matrix for the 20 classes and the classification report I could understand that the classification for some of the classes was with a greater accuracy than other.
+The classification report of the SVM algorithm is as follows:
+Based on the observations the following 3 classes have the greatest accuracy are hockey, politics.mideast and sci.crypt. The accuracies for these 3 classes are as follows: 98.21%, 94.21% and 91.03% respectively.
+The lowest accuracy is of 60% accuracy in pc.hardware class.
+The reason for such a less accuracy is due to common words between mac.hardware and pc.hardware.
